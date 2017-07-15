@@ -31,13 +31,13 @@ public class PriceResponse {
 	public void setPercent(Double percent) {
 		this.percent = percent;
 	}
-	public void getNetworkFee(){
+	public Double getNetworkFee(){
 		return networkFee;
 	}
 	public void setNetworkFee(Double networkFee){
 		this.networkFee = networkFee;
 	}
-	public void getEthexCommission(){
+	public Double getEthexCommission(){
 		return ethexCommission;
 		
 	}
