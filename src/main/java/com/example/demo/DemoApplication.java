@@ -39,6 +39,8 @@ public class DemoApplication {
         response.setEthexindia(ex);
         response.setPercent(percent);
         response.setProfit(profit);
+        response.setNetworkFee(networkFee);
+        response.setEthexCommission(ethexCommission);
         return response;
     }
 

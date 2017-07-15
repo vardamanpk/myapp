@@ -5,6 +5,8 @@ public class PriceResponse {
 	private Double ethexindia;
 	private Double percent;
 	private Double profit;
+	private Double networkFee;
+	private Double ethexCommission;
 	public Double getProfit() {
 		return profit;
 	}
@@ -29,6 +31,18 @@ public class PriceResponse {
 	public void setPercent(Double percent) {
 		this.percent = percent;
 	}
-	
+	public void getNetworkFee(){
+		return networkFee;
+	}
+	public void setNetworkFee(Double networkFee){
+		this.networkFee = networkFee;
+	}
+	public void getEthexCommission(){
+		return ethexCommission;
+		
+	}
+	public void setEthexCommission(Double ethexCommission){
+		this.ethexCommission = ethexCommission;
+	}
 
 }
