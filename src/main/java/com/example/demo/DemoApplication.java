@@ -28,9 +28,12 @@ public class DemoApplication {
     	RestTemplate restTemplate = new RestTemplate();
     	ResponseEntity<EthexIndia> ethex = restTemplate.exchange("https://ethexindia.com/api/ticker",HttpMethod.GET,entityReq, EthexIndia.class);
         CoinBase coinBase = restTemplate.getForObject("https://api.coinbase.com/v2/prices/ETH-INR/buy", CoinBase.class);
+        
         Double cb=Double.valueOf(coinBase.getData().getAmount());
         Double ex=Double.valueOf(ethex.getBody().getBid());
-        Double profit = ex-cb;
+        Double networkFee = cb*0.00042;
+        Double ethexCommission = ex/100; // 1 percent
+        Double profit = ex-(cb+networkFee+ethexCommission);
         Double percent = (profit*100)/cb;
         response.setCoinbase(cb);
         response.setEthexindia(ex);
